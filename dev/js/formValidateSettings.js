@@ -15,6 +15,8 @@
                 errorPlacement: function( error, element ) {
                     if ( element.parent( '.input-group' ).length ) {
                         error.insertAfter( element.parent() );
+                    } else if ( element.parent( '.radio' ) ) {
+                        error.insertBefore( element.parent() );
                     } else {
                         error.insertAfter( element );
                     }

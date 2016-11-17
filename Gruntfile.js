@@ -37,8 +37,11 @@ module.exports = function( grunt ) {
                 '<%= appConfig.dev.js %>/quizSettings.js',
                 '<%= appConfig.dev.js %>/app.js'
             ],
-            baseCSS: [
+            vendorCSS: [
                 'bower_components/bootstrap/dist/css/bootstrap.min.css'
+            ],
+            baseCSS: [
+                '<%= appConfig.dev.css %>/custom.css'
             ],
             baseFonts: 'bower_components/bootstrap/dist/fonts/',
             includes: [
@@ -59,6 +62,7 @@ module.exports = function( grunt ) {
                 '<%= appConfig.dev.pages %>/quiz-settings.html'
             ],
             watchFiles: [ 'Gruntfile.js' ].concat(
+                '<%= appConfig.baseCSS %>',
                 '<%= appConfig.baseJS %>',
                 '<%= appConfig.includes %>',
                 '<%= appConfig.pages %>'
@@ -94,7 +98,10 @@ module.exports = function( grunt ) {
             },
             dist: {
                 files: {
-                    '<%= appConfig.dist.css %>/quizfpu.min.css': '<%= appConfig.baseCSS %>'
+                    '<%= appConfig.dist.css %>/quizfpu.min.css': [].concat(
+                        '<%= appConfig.vendorCSS %>',
+                        '<%= appConfig.baseCSS %>'
+                    )
                 }
             }
         }, // cssmin
@@ -131,7 +138,10 @@ module.exports = function( grunt ) {
         concat: {
             css: {
                 files: {
-                    '<%= appConfig.dev.css %>/quizfpu.min.css': '<%= appConfig.baseCSS %>'
+                    '<%= appConfig.dev.css %>/quizfpu.min.css':  [].concat(
+                        '<%= appConfig.vendorCSS %>',
+                        '<%= appConfig.baseCSS %>'
+                    )
                 }
             },
             js: {
