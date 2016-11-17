@@ -1,0 +1,20 @@
+{
+  "name": "quiz-fpu",
+  "description": "",
+  "main": "index.js",
+  "authors": "",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "jquery-validation": "^1.15.1"
+  }
+}
