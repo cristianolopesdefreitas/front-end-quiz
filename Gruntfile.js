@@ -48,6 +48,7 @@ module.exports = function( grunt ) {
                 // html includes
                 '<%= appConfig.dev.includes %>/header.html',
                 '<%= appConfig.dev.includes %>/nav.html',
+                '<%= appConfig.dev.includes %>/nav-administration.html',
                 '<%= appConfig.dev.includes %>/footer.html'
             ],
             pages: [

@@ -15,8 +15,8 @@
                 errorPlacement: function( error, element ) {
                     if ( element.parent( '.input-group' ).length ) {
                         error.insertAfter( element.parent() );
-                    } else if ( element.parent( '.radio' ) ) {
-                        error.insertBefore( element.parent() );
+                    } else if ( element.closest( '.radio' ).length ) {
+                        error.insertAfter( element.closest( '.form-group' ).find( '.radio' ).last() );
                     } else {
                         error.insertAfter( element );
                     }

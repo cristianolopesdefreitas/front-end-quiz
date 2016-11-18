@@ -2,10 +2,15 @@
     'use strict';
 
     function getDataControl() {
-        var $element = $( '[data-control]' );
+        var $element = $( '[data-control]' ),
+            control = null;
 
         if ( $element.length ) {
-            QuizFPU[ $element.attr( 'data-control' ) ]();
+            control = $element.attr( 'data-control' );
+
+            if ( QuizFPU.hasOwnProperty( control ) ) {
+                QuizFPU[ control ]();
+            }
         }
     }
 
