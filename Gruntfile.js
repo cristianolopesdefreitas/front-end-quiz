@@ -176,6 +176,20 @@ module.exports = function( grunt ) {
             },
         }, // includes
 
+        strip_code: {
+            options: {
+                blocks: [
+                    {
+                        start_block: '<!-- start-livereload-script -->',
+                        end_block: '<!-- end-livereload-script -->'
+                    }
+                ]
+            },
+            strip: {
+                src: '<%= appConfig.dist.base %>/*.html'
+            }
+        }, // strip code
+
         connect: {
             server: {
                 options: {
@@ -220,6 +234,7 @@ module.exports = function( grunt ) {
             'uglify:dist',
             'cssmin:dist',
             'includes:dist',
+            'strip_code',
             'copy:dist'
         ]);
     });
@@ -230,6 +245,7 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-contrib-copy' );
     grunt.loadNpmTasks( 'grunt-contrib-concat' );
     grunt.loadNpmTasks( 'grunt-includes' );
+    grunt.loadNpmTasks( 'grunt-strip-code' );
     grunt.loadNpmTasks( 'grunt-contrib-connect' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
 };

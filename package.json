@@ -17,6 +17,7 @@
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-includes": "^1.0.0"
+    "grunt-includes": "^1.0.0",
+    "grunt-strip-code": "^1.0.4"
   }
 }
